@@ -1,79 +1,109 @@
 * {
   margin: 0;
   font-family: Helvetica;
+  box-sizing: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-header {
-  width: auto;
-  height: 500px;
-  margin: 0 auto;
-  background: #f1f3ff;
+/* font style */
+.text-heading-binar {
+  font-size: 36px;
+  line-height: 54px;
+  font-weight: 700;
 }
 
-nav {
-  padding-right: 148px;
-  padding-top: 32px;
-  padding-left: 136px;
-  padding-bottom: 45px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.text-heading-one {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
 }
 
-a.link-menu {
-  color: #000000;
+.text-heading-two {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+.text-sub-heading {
   font-size: 14px;
-  text-decoration: none;
-  font-weight: 400;
-  margin: 17px;
   line-height: 20px;
+  font-weight: 400;
 }
 
+.text-binar {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+a.text-footer{
+  text-decoration: none;
+  color:black;
+}
+
+/* button */
 button.btn-primary {
   background-color: #5cb85f;
   border-radius: 2px;
   font-size: 14px;
   font-weight: 700;
   padding: 8px 12px;
-  
 }
 
-section.column-header {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+ul.list-offer {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 300;
+  font-size: 14px;
 }
 
-.column-banner img{
-    position: absolute;
-    right: 0;
-    top: 257px;
+li:not(:last-child) {
+  margin-bottom: 20px;
 }
 
-img.car-images {
-    top: 14%;
+/* why us */
+.column-why-us {
+  padding-top: 90px;
+  padding-left: 136px;
+  padding-right: 136px;
 }
 
-.column-heading {
-    width: 60%;
-    padding-right: 148px;
-    padding-top: 32px;
-    padding-left: 136px;
-    padding-bottom: 45px;
+/* testimonial */
+
+#testimonial-gallery {
+  scroll-snap-type: x mandatory;
+  /* scroll-snap-align:inherit; */
+  padding-top: 40px;
 }
 
-h1.column-heading {
-    font-size: 36px;
-    color: #000000;
-    font-weight: 700;
+.gallery {
+  background: #f1f3ff;
 }
 
-p.sub-heading-car {
-    margin-top: 16px;
-    font-size: 14px;
-    color: #000000;
-    font-weight: 300;
-    line-height: 20px;
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+/* accordion */
+#accordianFAQ .accordion-item {
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  border-radius: 4px;
+}
+#accordianFAQ .accordion-button {
+  padding: 18px 24px;
 }
