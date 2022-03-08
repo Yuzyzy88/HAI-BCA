@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                def myEnv = docker.build 'my-environment:snapshot'
+                docker.build 'my-environment:snapshot'
             }
         }
         stage('Test') {
