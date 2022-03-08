@@ -3,9 +3,11 @@ pipeline {
 
     stages {
         stage('Clone repository') {
-            /* Let's make sure we have the repository cloned to our workspace */
-            echo "Checking out..."
-            checkout scm
+            steps {
+                /* Let's make sure we have the repository cloned to our workspace */
+                echo "Checking out..."
+                checkout scm
+            }
         }
         stage('Build') {
             steps {
