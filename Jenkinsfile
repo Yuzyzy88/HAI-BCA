@@ -7,7 +7,7 @@ node {
     }
     stage('Build') {
         echo "Building..."
-        def newApp = docker.build "bca_nginx:${env.BUILD_TAG}"  
+        def newApp = docker.build("bca_nginx:${env.BUILD_TAG}", ".")
     }
     stage('Test') {
         
