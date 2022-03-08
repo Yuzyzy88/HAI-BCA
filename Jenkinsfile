@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                docker.build 'my-environment:snapshot'
+                sh 'docker build -t bca_nginx .'
             }
         }
         stage('Test') {
