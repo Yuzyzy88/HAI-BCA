@@ -1,8 +1,6 @@
 node {
 
-    environment {
-        AWS = credentials('aws') 
-    }
+
     stage('Clone repository') {
         echo "Checking out..."
         checkout scm
@@ -14,10 +12,10 @@ node {
     }
     stage('Build') {
         echo "Building..."
-        def newApp = docker.build("bca_nginx:${env.BUILD_TAG}", ".")
-
-        echo "Username is $AWS_USR"
-        echo "Username is $AWS_PSW"
+        docker.withRegistry('https://298621573365.dkr.ecr.us-east-1.amazonaws.com/bca', 'ecr:us-east-1:aws') {
+            def image = docker.build("bca:${env.BUILD_TAG}", ".")
+            image.push()
+        }
     }
     stage('Deploy') {
         
