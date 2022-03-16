@@ -18,8 +18,7 @@ node {
         }
     }
     stage('Deploy') {
-        
         echo 'Deploying....'
-        
+        sh 'aws ecs update-service --cluster bca-cluster --service bca-ecs-service --force-new-deployment'
     }
 }

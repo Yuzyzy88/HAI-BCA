@@ -1,0 +1,18 @@
+AWS_ACCESS_KEY_ID=AKIAULBZ3TD265LHM35G AWS_SECRET_ACCESS_KEY=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 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 298621573365.dkr.ecr.us-east-1.amazonaws.com
+docker tag trial_bca 298621573365.dkr.ecr.us-east-1.amazonaws.com/bca
+docker push 298621573365.dkr.ecr.us-east-1.amazonaws.com/bca
+{
+  "Version": "2012-10-17",
+  "Id": "S3PolicyId1",
+  "Statement": [
+    {
+      "Sid": "IPAllow",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::examplebucket/*",
+      "Condition": {
+         "IpAddress": {"aws:SourceIp": "x.x.x.x/80"},  <--- IP of the Jenkins server
+      } 
+    } 
+  ]
